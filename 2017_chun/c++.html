@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  　<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C++模拟试卷 </title>
+    <script type="text/javascript" src="../static/js/jquery-3.1.0.js"></script>
+  <script type="text/javascript" src="../static/js/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/search.css"/>
+  </head>
+  <body>
+    <div class="search"><input type="text" name="searchText" id="searchText"/><button id="searchBtn">搜索</button><button id="nextBtn">下一个</button></div>
+    <div id="contentGroup" class="contentGroup">
+      <div class="content">
+《面向对象技术与C++》试卷答案(1)  
+第一题  填充题 (10分，每1个空格1分)
+
+<pre class="item"> 1.  通过对象名或对象引用调用其类成员函数使用运算符(.)，而通过指向对象的指针调用其类成员函数使用运算符(->)。
+</pre>
+
+<pre class="item"> 2.  指定为(private)访问属性的类成员只能被本类的成员函数或其他友元函数调用。
+</pre>
+
+<pre class="item"> 3.  动态分配一个int类型对象所需的存储空间使用运算符(new)，返回值的类型为(int*)。
+</pre>
+
+<pre class="item"> 4.  如果没有为类的成员对象提供成员初始化值，那么该对象的(缺省)构造函数将被调用。
+</pre>
+
+<pre class="item"> 5.  派生类的构造函数是在其基类的构造函数执行之(后)执行的。
+</pre>
+
+<pre class="item"> 6.  使用类的运算符重载不能改变运算符的(优先级)和(结合律) 。
+</pre>
+
+<pre class="item"> 7.  类的成员函数定义为=0表示该函数是一个(纯虚函数)。
+
+</pre>
+第二题  指出下列程序段中的错误，并说明错误原因(10分,每1小题5分)
+
+<pre class="item"> 1．class Date  {           //表示日期的类声明
+public:
+void Date(int,int,int);  //第1个参数年份，第2个参数为月份，第3个参数为日
+// 其他成员函数的原型说明
+private:
+void Date(int=2013,int=05,int=01);  
+int year = 2013 , month = 05 , day = 01;   
+}
+
+</pre>
+
+<pre class="item"> 1) void Date Date(int=2013,int=05,int=01);  构造函数的访问属性应为public
+ 2) 两个构造函数都不能指定返回类型
+3）两个构造函数的重载关系不正确
+ 4）int  year= 2013 , month = 05 , day = 01; 不能直接给数据成员赋初值
+ 5）最后少了一个分号(;)
+</pre>
+
+<pre class="item"> 2．class Example {
+public:
+  Example(int y=100) : data(y) { }
+  int getIncrementedData() const   { return data++; }
+static int getCount() { cout<< “Data is “ << data <&gt;endl; return count; }
+private:
+int data;
+static int count;
+};
+
+</pre>
+
+<pre class="item"> 1) const函数getIncrementedData()不能修改成员数据data
+ 2) static函数getCount()不能访问非static成员data
+3) static数据成员count需要在类说明的外部初始化
+
+</pre>
+第三题  选择题  (10分，每1个空格1分)
+
+<pre class="item"> 1．C++类体系中，不能被派生类继承的有（B）（E）。
+[A] 转换函数
+[B] 构造函数
+[C] 虚函数
+[D] 静态成员函数
+[E] 赋值运算符函数
+
+</pre>
+
+<pre class="item"> 2．定义类T的对象O的正确方法是（A）（E）。
+[A]  T O; 
+[B]  T O( ); 
+[C]  O T; 
+[D]  O T( );
+[E]  T O(1); 
+
+</pre>
+
+<pre class="item"> 3. 在派生类中重新定义虚函数时必须在（A）（B）方面与基类保持一致。
+[A] 参数个数[B] 参数类型[C] 参数名字[D] 操作内容[E] 赋值
+
+</pre>
+
+<pre class="item"> 4. 对于类C 的类型转换运算符函数，下列说明正确的是（C）
+[A]  void operator C(double=1.0);
+[B]  void operator C();
+[C]  operator double();
+[D]  ~C(double a=1.0);
+
+</pre>
+
+<pre class="item"> 5. 重载函数调用运算符operator( )时，应将其声明为类的（C）函数。
+[A]  非成员[B]  虚[C]  成员[D]  多态
+
+</pre>
+
+<pre class="item"> 6. 在VC++中，C++源文件的扩展名为（A）
+[A] .cpp[B] .obj[C] .lib[D] .exe
+
+</pre>
+
+<pre class="item"> 7. 定义析构函数时，应该注意（C）
+[A] 其名与类名完全相同
+[B] 返回类型是void类型
+[C] 无形参，也不可重载
+[D] 函数体中必须有delete语句
+</pre>
+第四题  简答题(10分)
+
+<pre class="item"> 
+比较C++的new和delete运算符与C标准库函数malloc和free的异同。
+
+相同点：用于动态内存分配和内存释放
+不同点：new和delete是运算符，而malloc和free是标准库函数；new的操作数是数据类型，不需要指定存储空间大小的字节数，而malloc需要指定存储空间大小的字节数；new返回的是申请类型的指针，而malloc返回的是void*，需要通过强制类型转换把指针转换成申请类型的指针。
+总的来说，new和delete使用更简单、更安全，也更灵活。
+</pre>
+第五题  写出以下程序运行时的输出结果(10分)
+<pre class="item"> 
+#include &lt;iostream>
+using namespace std;
+
+  class A {
+         public:
+           virtual void write()  { cout << "class A \n"; }
+    };
+    
+class B: public A {
+           void write()  { cout << "class B \n"; }
+    };
+    
+class C: public A {
+           void write()  { cout << "class C\n"; }
+    };
+    class D: public C { 
+           B m;
+ };
+
+class E: public B { 
+           C m;
+ };
+
+int main( )
+{   A a;  B b;  C c;  D d;  E e;
+        A* p[ ] = {&amp;a,&amp;b,&amp;c,&amp;d,&amp;e}; 
+for (int i=0;i&lt;5;i++)  p[i]->write(); 
+return  0;
+}
+
+class A
+class B
+class C
+class C
+class B
+</pre>
+<pre class="item"> 
+第六题  写出以下程序运行时的输出结果(10分)
+&amp;
+#include &lt;iostream>
+using namespace std;
+
+class A                             
+{ public:    A( ) { cout << "构造类A对象"<&lt;endl; }   
+~A( ) { cout << "析构类A对象"<&lt;endl;  }  }; 
+class B : public A
+{ public:    B ( ) { cout << "构造类B对象"<&lt;endl; } 
+~B( ) { cout << "析构类B对象"<&lt;endl; } 
+};
+class C : public B
+{public:     C( ) { cout << "构造类C对象"<&lt;endl;; }   
+~C( ) { cout <&lt; "析构类C对象"<&lt;endl;  }
+private:     A m; 
+};
+
+A obj; 
+int main( ) 
+{      B obj2;  C* p=new C;     cout << endl;  
+static A  sa;  { B obj2; }   cout << endl;
+delete p;                 cout << endl;
+      return 0; 
+}
+
+构造类A对象
+构造类A对象
+构造类B对象
+构造类A对象
+构造类B对象
+构造类A对象
+构造类C对象
+
+构造类A对象
+构造类A对象
+构造类B对象
+析构类B对象
+析构类A对象
+
+析构类C对象
+析构类A对象
+析构类B对象
+析构类A对象
+
+析构类B对象
+析构类A对象
+析构类A对象
+析构类A对象
+</pre>
+<pre class="item"> 
+第七题  编程题(10分)
+编写一个名称为isSorted的函数模板确定其三个同类型参数值是否是按从小到大次序排列的。如果是，返回true；否则，返回false。
+
+template &lt;class T> bool isSorted(T a, T b, T c) { return a>=b &amp;&amp; b>=c; }
+
+第八题  编程题(30分)
+定义并实现表示由字符元素组成的集合类型CharSet。
+需提供的操作至少应包括：
+ 构造函数
+ 析构函数
+ 插入元素 （ insert 函数 ）
+ 集合并运算（ + 运算符 ）
+ 集合显示输出 （ << 运算符 ）
+集合显示输出的格式为{c1,c2,…},空集的输出为{}。
+CharSet类型的使用例子如下：
+
+/*********************************************************/
+/*       testCharSet.cpp                                         */
+/*********************************************************/
+#include &lt;iostream>
+using namespace std;
+#include "charset.h"
+
+int main()
+{   
+    CharSet s1(100), s2(100);
+
+    for (char c=’A’;c<=’P’;c++)
+    {   s1.insert(c);     s2.insert(c+5);  } // 插入元素
+
+    cout << s1 << " ∪ " << s2 << " = " << s1 + s2 << endl; //集合并
+
+return 0;
+}
+
+#ifndef  CHARSET_H
+#define  CHARSET_H
+class CharSet {
+    int cursize,maxsize;      char *x;     bool member(char t) const; 
+public:
+    CharSet(int m = 100);      CharSet(const CharSet&amp;);
+    ~CharSet();                void insert(char t);
+    friend ostream&amp; operator<<(ostream&amp;,const CharSet&amp;);
+    CharSet operator+(const CharSet&amp;);
+};
+#endif
+
+/*********************************************************/
+/*       charset.cpp                                     */
+/*********************************************************/
+#include &lt;iostream>
+#include &lt;cstdlib>
+using namespace std;
+#include "charset.h"
+CharSet::CharSet(int m)
+{   if (m&lt;1) exit(1);     cursize=0; x=new char[maxsize=m]; }
+CharSet::CharSet(const CharSet&amp; m)
+{   cursize=m.cursize;    x=new char[maxsize=m.maxsize];
+    for (int i=0;i&lt;cursize;i++) x[i]=m.x[i];
+}
+CharSet::~CharSet() {    delete x;  }
+bool CharSet::member(char t) const
+{   int l=0;    int u=cursize-1;
+    while (l<=u)
+    {   int m=(u+l)/2;   if (t&lt;x[m])  u=m-1;  else if (t>x[m])  l=m+1;  else return true;  }
+    return false;
+}
+void CharSet::insert(char t)
+{   if (member(t)) return;        if (cursize>=maxsize) exit(1);
+    x[cursize++]=t;
+    for (int i=cursize-1;i>0;i--)
+        if (x[i]&lt;x[i-1])  { char temp=x[i];  x[i]=x[i-1]; x[i-1]=temp; } else break;
+}
+ostream&amp; operator<<(ostream&amp; os, const CharSet&amp; is)
+{   cout << "{";
+    if (is.cursize>0)
+    {    for (int i=0;i&lt;is.cursize-1;i++)   os<&lt;is.x[i]<<',';      os<&lt;is.x[i++];    }
+    cout << "}";
+  return os;
+}
+CharSet CharSet::operator+(const CharSet&amp; anotherset)
+{    CharSet r=*this;
+    for (int i=0;i&lt;anotherset.cursize;i++)   r.insert(anotherset.x[i]);
+    return r;
+}
+</pre>
+
+    </div>
+    <div class="content">
+《面向对象技术与C++》试卷答案(2)  
+第一题  填充题 (10分，每1个空格1分)
+
+<pre class="item"> 1.  函数(模板)能够定义一个在不同数据类型基础上完成同样任务的一组函数。
+</pre>
+
+<pre class="item"> 2.  在public方式的类继承中，(派生)类的指针可作为(基)类的指针使用。
+</pre>
+
+<pre class="item"> 3.  若一个类包含一个或多个纯虚函数，则该类为(抽象)类。
+</pre>
+
+<pre class="item"> 4.  C++提供的(连接说明)能够把C编译器编译好的函数与C++程序正确地连接。
+</pre>
+
+<pre class="item"> 5.  (static)数据成员是类的所有对象共享的信息。
+</pre>
+
+<pre class="item"> 6.  每个对象都维护了一个指向自身的指针，这个指针称为(this)指针。
+</pre>
+
+<pre class="item"> 7.  关键字(const)指定了不可修改的对象或变量。
+</pre>
+
+<pre class="item"> 8.  重载数组下标运算符 operator[ ] 时，应将其声明为类的(成员)函数。
+</pre>
+
+<pre class="item"> 9.  在VC++中，连接器所生成的文件的扩展名为(exe)。
+</pre>
+
+第二题  指出下列程序段中的错误，并说明错误原因(10分,每1小题5分)
+
+<pre class="item"> 1．class Time  {           //表示时间的类声明
+public:
+void Time(int,int,int);  //第1个参数小时，第2个参数为分钟，第3个参数为秒钟
+// 其他成员函数的原型说明
+private:
+void Time(int=12,int=10,int=0);  
+int hour =12 , minute =10 , second = 0;   
+}
+
+1) void Time(int=12,int=10,int=0);  构造函数的访问属性应为public
+2) 构造函数不能指定返回类型
+ 3）两个构造函数的重载关系不正确
+ 4）int hour = 12 , minute = 10 , second = 0; 不能直接赋初值
+ 5）最后少了一个分号(;)
+
+</pre>
+
+<pre class="item"> 2．class Example {
+public:
+void write() { cout << v <&lt;endl; }
+virtual void f(){ write();}
+private:
+int v;
+};
+class Derived : public Example {
+public：
+void write(){ cout << Example::v << a << endl; }
+virtual int f () { write();  return 0; }
+private:
+int a;
+};
+
+1) Derived的函数write() 不能直接访问基类Example的成员数据v
+2) 虚函数f的函数原型需相同
+</pre>
+
+第三题  选择题  (10分，每1个空格1分)
+
+<pre class="item"> 1．在类中说明的成员可以使用关键字（A）（D）进行修饰。
+[A] private
+[B] extern
+[C] auto
+[D] public
+[E] register
+
+</pre>
+
+<pre class="item"> 2．对于类T的非const成员函数来说，this的含义为（B）或（E）。
+[A]  T this; 
+[B]  const T* const this; 
+[C]  T* this; 
+[D]  const T* this;
+[E]  T* const this;
+
+</pre>
+
+<pre class="item"> 3．创建或删除堆对象，需要使用操作符（B）（C）
+[A]  ->
+[B] new
+[C] delete
+[D] .
+[E] *
+
+</pre>
+
+<pre class="item"> 4．通过（A）和（D）调用虚函数时，采用动态联编。
+[A]  对象引用
+[B]  对象名
+[C]  成员名限定
+[D]  对象指针
+[E]  this指针
+
+</pre>
+
+<pre class="item"> 5．以下哪个类型转换是错误的？(B)
+   void* pv;
+   int* pi;   
+[A]  pv=pi;   
+[B]  pi=pv;   
+[C]  pv=(void*)pi;   
+[D]  pi=(int*)pv;
+
+</pre>
+
+<pre class="item"> 6．每个类（C）构造函数。
+[A] 只能有一个
+[B] 只可有私有的
+[C] 可以有多个
+[D] 只可有缺省的
+</pre>
+第四题  简答题(10分)
+<pre class="item">
+说明在类定义中的关键字static的作用。
+
+关键字static定义类的静态数据成员和静态成员函数。类的静态数据成员是所有类的对象所共享的数据，而静态成员函数用于处理静态数据成员。
+</pre>
+第五题  写出以下程序运行时的输出结果(10分)
+<pre class="item">
+#include &lt;iostream>
+using namespace std;
+  class CObject {
+      public:
+        virtual void myname() { cout << " A. \n"; }
+    };
+    class CCmdTarget: public CObject {
+        void myname() { cout << " B. \n"; }
+    };
+    class CWnd: public CCmdTarget {
+        void myname() { cout << " C. \n"; }
+    };
+    class CControlBar: public CWnd {  };
+    int main( )
+    {  CObject a;       CCmdTarget b;            
+       CWnd c;         CControlBar d;
+       CObject* pv[4]={&amp;,&amp;,&amp;,&amp;};
+       CObject  v[4]={a,b,c,d};
+for (int i=0;i&lt;4;i++)  { v. myname();  pv[i]->myname(); }
+        return  0;
+    }
+
+A.
+A.
+A.
+B.
+A.
+C.
+A.
+C.
+</pre>
+<pre class="item">
+第六题  写出以下程序运行时的输出结果(10分)
+
+#include &lt;iostream>
+using namespace std;
+class A                             
+{ public:    A( ) { cout << " A "; }   
+~A( ) { cout << "!A ";  }  }; 
+class B 
+{ public:    B ( ) { cout << " B "; } 
+~B( ) { cout << "!B "; } 
+private:     A m; 
+};
+class C : public A
+{public:     C( ) { cout << " C "; }   
+~C( ) { cout << "!C ";  }
+private:     B m; 
+};
+
+B obj1,obj2; 
+int main( ) 
+{      A obj2;  C* p=new C;     cout << endl;  
+delete p;                 cout << endl;
+      return 0; 
+}
+
+A B A B A A A B C
+!C !B !A !A
+!A !B !A !B !A
+</pre>
+第七题  编程题(10分)
+
+<pre class="item">
+编写一个名称为mean的函数模板计算若干个同类型参数值的平均值。
+
+template &lt;class T> double mean (T* a,int n)
+{ T s=0; for (int i=0;i&lt;n;i++) s+=a[i];
+  return (double)s/n;
+}
+
+第八题  编程题(30分)
+定义并实现表示由整数元素组成的集合类型IntSet。
+需提供的操作至少应包括：
+ 构造函数
+ 析构函数
+ 插入元素 （ insert 函数 ）
+ 集合差运算（ - 运算符 ）
+ 集合显示输出 （ << 运算符 ）
+集合显示输出的格式为{i1,i2,…},空集的输出为{}。
+
+IntSet类型的使用例子如下：
+
+/*********************************************************/
+/*       testIntSet.cpp                                         */
+/*********************************************************/
+#include &lt;iostream>
+using namespace std;
+#include "intset.h"
+
+int main()
+{   
+    IntSet s1(100), s2(100);
+
+    for (int i=100;i<=120;i++)
+    {   s1.insert(i);     s2.insert(i+5);  } // 插入元素
+
+    cout << s1 << " - " << s2 << " = " << s1 - s2 << endl; //集合差
+
+return 0;
+}
+
+
+/*********************************************************/
+/*       intset.h                                        */
+/*********************************************************/
+#ifndef  INTSET_H
+#define  INTSET_H
+class IntSet {
+    int cursize,maxsize;      int *x;     bool member(int t) const; 
+public:
+    IntSet(int m = 100);     IntSet(const IntSet&amp;);
+    ~IntSet();               void insert(int t);
+    friend ostream&amp; operator<<(ostream&amp;,const IntSet&amp;);
+    IntSet operator-(const IntSet&amp;);
+};
+#endif
+
+/*********************************************************/
+/*       intset.cpp                                      */
+/*********************************************************/
+#include &lt;iostream>
+#include &lt;cstdlib>
+using namespace std;
+#include "intset.h"
+IntSet::IntSet(int m)
+{   if (m&lt;1) exit(1);    cursize=0; x=new int[maxsize=m];  }
+IntSet::IntSet(const IntSet&amp; m)
+{   cursize=m.cursize;     x=new int[maxsize=m.maxsize];
+    for (int i=0;i&lt;cursize;i++) x[i]=m.x[i];
+}
+IntSet::~IntSet() {    delete x;  }
+bool IntSet::member(int t) const
+{   int l=0;    int u=cursize-1;
+    while (l<=u)
+    {   int m=(u+l)/2;
+        if (t&lt;x[m])  u=m-1;   else if (t>x[m])  l=m+1;   else return true;
+    }
+    return false;
+}
+void IntSet::insert(int t)
+{   if (member(t)) return;     if (cursize>=maxsize) exit(1);
+    x[cursize++]=t; 
+    for (int i=cursize-1;i>0;i--)
+        if (x[i]&lt;x[i-1])  {  int temp=x[i];    x[i]=x[i-1];    x[i-1]=temp;  } else break;
+}
+ostream&amp; operator<<(ostream&amp; os, const IntSet&amp; is)
+{    cout << "{";
+if (is.cursize>0) { for (int i=0;i&lt;is.cursize-1;i++) os<&lt;is.x[i]<<','; os<&lt;is.x[i++]; }
+    cout << "}";
+  return os;
+}
+IntSet IntSet::operator-(const IntSet&amp; anotherset)
+{    IntSet r;
+   for (int i=0;i&lt;cursize;i++) if(!anotherset.member(x[i])) r.insert(x[i]);
+return r;
+}
+
+</pre>
+    </div>
+    <div class="content">
+《面向对象技术与C++》试卷答案(3)
+第一题  填充题 （10分，每1个空格1分）
+
+<pre class="item"> 1.  当使用带参数的流操纵算子时，程序中必须包含(iomanip)头文件。
+</pre>
+
+<pre class="item"> 2.  复合对象中的成员对象是在建立复合对象之(前)建立的。
+</pre>
+
+<pre class="item"> 3.  运算符new分配的动态内存要用运算符(delete) 回收。如果在一个类的构造函数中使用new分配动态内存，则回收操作应在类的(析构)函数中完成。
+</pre>
+
+<pre class="item"> 4.  struct成员的默认访问模式是(public)，而class成员的默认访问模式是 (private)。
+</pre>
+
+<pre class="item"> 5.  关键字(const) 指定了不可修改的对象或变量。关键字(const) 指定一个类的成员不会修改类中的数据成员。
+</pre>
+
+<pre class="item"> 6.  重载赋值运算符 operator= 时，应将其声明为类的（成员）函数。
+</pre>
+
+<pre class="item"> 7.  C++中的输入/输出是以字节(流) 的形式实现的。
+</pre>
+
+第二题  指出下列程序段中的错误，说明错误原因(10分,每1小题5分） 
+
+<pre class="item"> 1．class Rational {           //表示有理数的类声明
+public：
+void Rational (int,int);  //第1个参数为分子，第2个参数为分母
+// 其他成员函数的原型说明
+private:
+void Rational ( );  //默认的数为0，其分子表示为0，分母表示为1
+int a = 0 , b = 1;   
+}
+
+1) void Rational();  构造函数的访问属性应为public
+2) 两个构造函数都不能指定返回类型
+3）int  a = 0 , b = 1; 不能直接赋初值
+4）最后少了一个分号(;)
+
+</pre>
+
+<pre class="item"> 2．class myClass {
+public:
+  myClass(char a, int b)    { v = a ;  si = b ; }
+void f1(int i = 10) const   { v = v + i ; }
+static int f2()            { return v + si;  }
+private:
+char v;
+static int si;
+} ;
+
+1)  static函数f2()不能访问非static成员v
+ 2)  构造函数中不能对static数据赋值
+3)  const成员函数f1不能修改数据成员v
+4)  static数据si需要在类声明的外面进行初始化
+
+</pre>
+
+第三题  选择题  (10分，每1个空格1分)
+
+<pre class="item"> 1．在VC++中，目标文件的扩展名为（B）
+[A]  .cpp
+[B]  .obj
+[C]  .h
+[D]  .exe
+
+</pre>
+
+<pre class="item"> 2．通常情况下，模板函数的类型参数个数不能为（A）个。
+[A] 0
+[B] 1
+[C] 2
+[D] 2个以上
+
+</pre>
+
+<pre class="item"> 3．既要禁止修改指针p，又要禁止修改p所指的数据，则p的正确定义是（D）。
+[A] const char* p=”xxxx”;
+[B] char* const p=”xxxx”;
+[C] char const *p=”xxxx”;
+[D] const char * const p=”xxxx”;
+
+</pre>
+
+<pre class="item"> 4．若函数f是类C中的虚函数，类D是类C的公有派生类，则函数f在类D中是（A）。
+[A] 总是虚函数
+[B] 只有重新声明时才是虚函数
+[C] 只有使用virtual关键字重新声明时才是虚函数
+[D] 不可能是虚函数
+
+</pre>
+
+<pre class="item"> 5. 每个类（A）析构函数。
+[A] 只能有一个
+[B] 只可有私有的
+[C] 可以有多个
+[D] 只可有缺省的
+
+</pre>
+
+<pre class="item"> 6. 重载函数调用运算符operator[ ]时，应将其声明为类的（C）函数。
+[A]  非成员
+[B]  虚
+[C]  成员
+[D]  多态
+
+</pre>
+
+<pre class="item"> 7. static成员函数没有（B）。
+[A]  返回值
+[B]  this指针
+[C]  指针参数
+[D]  返回类型
+
+</pre>
+
+<pre class="item"> 8. 设T是类名，则声明T a(); 表示a是（A）。
+[A]  函数名
+[B]  对象名
+[C]  函数指针
+[D]  引用
+
+</pre>
+
+<pre class="item"> 8. 设函数f是类A的虚函数，类B是类A的public派生类。
+定义B d; A* p=&amp;d; A&amp; r=d; 则采用动态联编的是（B）和（E）。
+[A] d.f();
+[B] p->f();
+[C] p.f();
+[D] r->f();
+[E] r.f();
+</pre>
+第四题  简答题(10分)
+<pre class="item"> 
+为什么编译器认为把基类指针转换为派生类指针是危险的？ 
+
+派生类指针指向基类对象。这种方法是不安全的，因而需要避免。因为通过派生类指针使用派生类自己添加的成员是可以的，但它所指的基类对象中并不存在这种成员。
+</pre>
+<pre class="item"> 
+第五题  写出以下程序运行时的输出结果  （10分）
+
+#include &lt;tream>
+using namespace std;
+  class A {
+         public:
+           A() { cout << "initialize A\n"; }
+           virtual void write()  { cout << "class A \n"; }
+    };
+    
+class B: public A {
+         public:
+           B() { cout << "initialize B\n"; }
+           void write()  { cout << "class B \n"; }
+    };
+    
+class C: public B {
+         public:
+           C() { cout << "initialize C\n"; }
+           void write()  { cout << "class C\n"; }
+    };
+    
+class D: public C { 
+         public:
+           D() { cout << "initialize D\n"; }
+ };
+    
+int main( )
+{   A a;  B b;  C c;  D d;  
+        A* p[ ] = {&amp;a,&amp;b,&amp;c,&amp;d};  A arr[ ] = {a,b,c,d};
+for (int i=0;i&lt;;i++)  { p[i]->write(); arr[i]. write(); }
+return  0;
+}
+
+initialize A
+initialize A
+initialize B
+initialize A
+initialize B
+initialize C
+initialize A
+initialize B
+initialize C
+initialize D
+class A
+class A
+class B
+class A
+class C
+class A
+class C
+class A
+</pre>
+第六题  写出以下程序运行时的输出结果  （10分）
+<pre class="item"> 
+#include &lt;tream>
+using namespace std;
+class A                             
+{ public:    A( ) { cout << " AAA "; }   ~A( ) { cout << " ~AAA ";  }  }; 
+class B : public A
+{ public:    B ( ) { cout << " BBB "; }   ~B( ) { cout << " ~BBB "; } 
+private:    A  m1,m2; 
+};
+class C : public A
+{public:     C( ) { cout << " CCC "; }   ~C( ) { cout << "~CCC "; }
+private:     B m1,m2; 
+};
+
+A obj; B obj2; C obj3;
+
+int main( ) 
+{    C objc;  B* p=new B;  cout << endl;  delete p;
+     static A  sa;
+     return 0; 
+}
+
+AAA  AAA  AAA  AAA  BBB  AAA  AAA  AAA  AAA  BBB  AAA  AAA  AAA  BBB  CCC  AAA
+ AAA  AAA  AAA  BBB  AAA  AAA  AAA  BBB  CCC  AAA  AAA  AAA  BBB
+ ~BBB  ~AAA  ~AAA  ~AAA  AAA ~CCC  ~BBB  ~AAA  ~AAA  ~AAA  ~BBB  ~AAA  ~AAA  ~AA
+A  ~AAA  ~AAA ~CCC  ~BBB  ~AAA  ~AAA  ~AAA  ~BBB  ~AAA  ~AAA  ~AAA  ~AAA  ~BBB
+~AAA  ~AAA  ~AAA  ~AAA 
+</pre>
+第七题  编程题  （10分）
+<pre class="item"> 
+编写一个名称为sum的函数模板计算其三个同类型参数值的和。
+
+template &lt; T> T sum(T a, T b, T c) { return a+b+c; }
+
+第八题  编程题  （30分）
+建立一个能安全使用的动态数组类DynamicArray。
+所谓安全使用指数组下标越界时自动终止程序执行；所谓动态指数组的大小可在程序运行过程中确定，而不必要在编写程序时就确定下来。
+给类提供能完成下列功能的函数：构造函数和拷贝构造函数；数组整体赋值和输出；下标运算符。
+
+//dynamicarray.h
+#ifndef DYNAMICARRAY_H
+#define DYNAMICARRAY_H
+#include &lt;tream>
+using namespace std;
+class DynamicArray {  
+    friend ostream&amp;operator<<(ostream&amp;, const DynamicArray&amp;);
+public:
+    DynamicArray( int arraySize = 10 );         
+    DynamicArray( const DynamicArray&amp;);        
+    ~DynamicArray();                            
+    const DynamicArray&amp;operator= ( const DynamicArray&amp;);
+    int&amp;operator[] ( int );              
+private:
+    int* ptr;   int size; 
+};
+#endif
+
+//dynamicarray.cpp
+#include &lt;lib>
+#include &lt;sert>
+using namespace std;
+#include "dynamicarray.h"
+DynamicArray::DynamicArray(int arraySize)
+{   size = arraySize;   ptr = new int[size];  assert( ptr != 0 );
+    for (int i = 0 ; i < size ; i++ ) ptr[i] = 0;  
+}
+DynamicArray::DynamicArray( const DynamicArray&amp;init )
+{   size = init.size;    ptr = new int[size];   assert( ptr != 0 );  
+    for (int i = 0 ; i < size ; i++ ) ptr[i] = init.ptr[i];
+}
+DynamicArray::~DynamicArray() { delete[] ptr; }
+int&amp;DynamicArray::operator[]( int subscript)
+{   assert ( 0 <= subscript &amp;subscript < size );
+    return ptr [ subscript ];  
+}
+const DynamicArray&amp;DynamicArray::operator= ( const DynamicArray&amp;right )
+{   if ( this != &amp;right ) 
+    {   delete[] ptr;  size = right.size; ptr = new int[size]; assert ( ptr != 0 );
+        for ( int i = 0 ; i < size ; i++ )  ptr[i] = right.ptr[i];
+    }
+    return *this;  
+}
+ostream&amp;operator<<(ostream&amp;output, const DynamicArray&amp;a )
+{   for ( int i = 0 ; i < a.size ; i++ ) output << a.ptr[i] << ' ';
+    return output;  
+}
+
+</pre>
+    </div>
+    <div class="content">
+《面向对象技术与C++》试卷答案(4) 
+第一题  填充题 （10分，每1个空格1分）
+
+<pre class="item"> 1.  在VC++中，编译器所生成的文件的扩展名为(obj)。
+</pre>
+
+<pre class="item"> 2.  与系统中标准设备对应的四个流对象是(cin) 、(cout) 、cerr 和 clog。
+</pre>
+
+<pre class="item"> 3.  在类定义中，将(=0)置于成员函数原型的末尾可以声明该函数为纯虚函数，含有纯虚函数的类被称为(抽象)类。
+</pre>
+
+<pre class="item"> 4.  关键字(operator)引出了重载运算符函数的定义。
+</pre>
+
+<pre class="item"> 5.  一般应将重载的流运算符定义为类的(非成员)函数。
+</pre>
+
+<pre class="item"> 6.  (类模板) 提供了一种描述通用类的方法。
+</pre>
+
+<pre class="item"> 7.  (构造函数) 是用来初始化类的数据成员的一种特殊的成员函数。
+</pre>
+
+<pre class="item"> 8.  在VC++中，C++的源程序文件的扩展名为(cpp)。
+
+</pre>
+
+第二题  指出下列程序段中的错误，说明错误原因(10分,每1小题5分）
+<pre class="item"> 1．class Complex {      //表示复数的类声明
+public：
+void Complex (double,double); //第1个参数为实部，第2个参数为虚部
+// 其他成员函数的原型说明
+private:
+void Complex ( );          //默认复数的实部表示为0，虚部表示为0
+int real = 0 , image = 0;
+}
+
+1) void Complex();  构造函数的访问属性应为public
+ 2) 两个构造函数均不能指定返回类型
+3）int  real = 0 , image = 0; 不能直接赋初值
+ 4）最后少了一个分号(;)
+</pre>
+
+<pre class="item"> 2．class C {
+public:
+void C(int s = 30) const { contents = new int[s]; }
+void ~C(int s = 30) const { cout << ”this object is destroyed” << endl; }
+private:
+int* contents;
+} ;
+
+ 1) 构造函数不能指定返回类型
+2) 析构函数不能指定返回类型
+3) 构造函数不能是const成员函数
+4）析构函数不能包含参数
+5）析构函数中需要使用delete操作符释放构造函数中使用new操作符申请的自由内存
+</pre>
+
+第三题  选择题  (10分，每1个空格1分)
+
+<pre class="item"> 1．在VC++中，可执行文件的文件扩展名为（D）
+[A]  .cpp
+[B]  .obj
+[C]  .dsw
+[D]  .exe
+
+</pre>
+
+<pre class="item"> 2．定义一个类的输入运算符时，应将函数定义为（B）
+[A] 类的成员函数 
+[B] 类的非成员函数
+[C] const成员函数
+[D] static成员函数
+
+</pre>
+
+<pre class="item"> 3．不定义而能直接使用的运算符是（B）和（D）。
+[A] +
+[B] =
+[C] +=
+[D] &amp;
+[E] 类型转换运算符
+
+</pre>
+
+<pre class="item"> 4．对于既从基类派生定义，又包含成员类的类来说，构造函数执行的次序为（B）。
+[A]  本类；基类；成员类
+[B]  基类；成员类；本类
+[C]  成员类；本类；基类
+[D]  基类；本类；成员类
+
+</pre>
+
+<pre class="item"> 5．类C定义中正确的成员函数声明是（A）和（D）。
+[A]  C();
+[B]  int operator();
+[C]  int C();
+[D]  int f()=0;
+[E]  void C();
+
+</pre>
+
+<pre class="item"> 6．不能用const关键字修饰的是（D）。
+[A]  成员函数
+[B]  指针
+[C]  对象
+[D]  文件
+
+</pre>
+
+<pre class="item"> 7．不能用static关键字修饰的是（D）。
+[A]  成员函数
+[B]  成员数据
+[C]  全局变量
+[D]  类型名
+
+</pre>
+
+<pre class="item"> 8．能使用this的是（C）。
+[A]  static成员函数
+[B]  友元函数
+[C]  非static成员函数
+[D]  全局函数
+</pre>
+第四题  简答题(10分)
+<pre class="item"> 
+举例说明 “把基类指针转换为派生类指针是危险的” 的观点。 
+
+如果基类指针指向的是基类对象，那么转换为派生类指针后，通过派生类指针访问派生类中定义的数据成员时，发生无法找到相应数据成员的错误。
+例如：class A { }; class B: public A { int a; };
+A a; B* pb=&a; pb->a无法访问到！
+
+</pre>
+<pre class="item"> 
+第五题  写出以下程序运行时的输出结果  （10分）
+
+#include &lt;tream>
+using namespace std;
+  class A {
+         public:
+           A() { cout << " A " ; }
+           ~A() { cout << " ~A " ; }
+           virtual void print()  { cout << " AAA " ; }
+    };
+    
+class B: public A {
+         public:
+           B() { cout << " B " ; }
+           ~B() { cout << " ~B " ; }
+           void print()  { cout << " BBB " ; }
+    };
+    
+class C: public B {
+         public:
+           C() { cout << " C " ; }
+           ~C() { cout << " ~C " ; }
+    };
+    
+class D: public C { 
+         public:
+           D() { cout << " D " ; }
+           ~D() { cout << " ~D " ; }
+           void print()  { cout << " DDD " ; }
+ };
+    
+int main( )
+{  
+A a;  B b;  C c;  D d;  cout << endl; 
+        A* p[ ] = {&amp;a,&amp;b,&amp;c,&amp;d};  A arr[ ] = {a,b,c,d}; cout << endl;
+for (int i=0;i&lt;;i++)  { p[i]->print(); arr[i].print(); }  cout << endl;
+return  0;
+}
+
+A  A  B  A  B  C  A  B  C  D
+
+ AAA  AAA  BBB  AAA  BBB  AAA  DDD  AAA
+ ~A  ~A  ~A  ~A  ~D  ~C  ~B  ~A  ~C  ~B  ~A  ~B  ~A  ~A 
+
+</pre>
+<pre class="item"> 
+第六题  写出以下程序运行时的输出结果  （10分）
+
+#include &lt;tream>
+#include &lt;>
+using namespace std;
+
+class X { 
+char contents[10];
+public:
+    X(const char* s) 
+    {   cout << "Calling constructor : " << s << '\n'; strcpy(contents,s); }
+    X(const X&amp;x) 
+    {   cout << "Calling copy constructor : " << x.contents << '\n'; 
+strcpy(contents,x.contents);     }
+    X&amp;operator=(const X&amp;x)
+    {   cout << "Calling assignment operator : " << x.contents << '\n'; 
+strcpy(contents,x. contents); return *this;    }
+    ~X( ) {   cout << "Calling destructor : " << contents << '\n';   }
+};
+X g (X arg)  {  return arg;  }
+int main( )  {   X x="xvalue";   x=g(x);    return  0;  }
+
+Calling constructor : xvalue
+Calling copy constructor : xvalue
+Calling copy constructor : xvalue
+Calling destructor : xvalue
+Calling assignment operator : xvalue
+Calling destructor : xvalue
+Calling destructor : xvalue
+</pre>
+<pre class="item"> 
+第七题  编程题  （10分）
+
+编写一个名称为product的函数模板计算其两个同类型参数值的积。
+
+template &lt; T> T product(T a, T b) {  return a*b;  }
+
+第八题  编程题  （30分）
+建立用于完成分数形式算术运算的有理数类Rational。
+用int变量表示类的private数据成员(即分子和分母)。给类提供一个能够对所声明的对象初始化的构造函数。为了能够在不提供初始化值的情况下也能对对象初始化，构造函数中应该包含默认的值。构造函数还应该以最简分数的形式存储数据，即2/4应该在对象中存储成分子为1、分母为2的形式。给类提供能够完成如下功能的函数：
+a)  使之能用重载的 + 运算符将两个有理数相加，以最简分数形式保存结果。
+b)  使之能用重载的 - 运算符将两个有理数相减，以最简分数形式保存结果。
+c)  使之能用重载的 * 运算符将两个有理数相乘，以最简分数形式保存结果。
+d)  使之能用重载的 / 运算符将两个有理数相除，以最简分数形式保存结果。
+e)  使之能用重载的 >> 和 << 输入和输出有理数。以a/b的格式输入和输出结果(a是分子，b是分母)。
+f)  重载运算符==和!=，使之能比较两个复数。
+
+
+//******************************************************************** 
+// rational.h  
+//******************************************************************** 
+#ifndef RATIONAL_H 
+#define RATIONAL_H 
+#include < iostream>
+using namespace std;
+class Rational 
+{ 
+    friend ostream&amp;operator<<(ostream&amp;,Rational); // 输出 
+    friend istream&amp;operator>>(istream&amp;,Rational&amp;); // 输入 
+public: 
+    Rational(int=0,int=1);  // 构造函数
+    Rational operator+ ( const Rational&amp;) const; // 加 
+    Rational operator- ( const Rational&amp;) const; // 减 
+    Rational operator* ( const Rational&amp;) const; // 乘 
+    Rational operator/ ( const Rational&amp;) const; // 除 
+    int operator== ( const Rational&amp;) const; // 相等 
+    int operator!= ( const Rational&amp;) const; // 不相等 
+private: 
+    int numerator,denominator; // 分子和分母 
+    void simplify(); // 工具函数，进行化简 
+}; 
+#endif 
+
+//*************************************************************** 
+// rational.cpp 
+//*************************************************************** 
+#include &lt;tream> 
+#include &lt;lib>
+using namespace std;
+#include "rational.h" 
+//*************************************************************** 
+void Rational::simplify() 
+{  if(numerator==0) { denominator=1; return; } 
+   long gcd=abs(numerator)>abs(denominator)?
+abs(denominator):abs(numerator); 
+   if (gcd==0) return; 
+   do 
+   {  if (gcd==1) break; 
+      if(numerator%gcd==0 &amp;&amp; denominator%gcd==0) break; else gcd--; 
+   } while(true); 
+   numerator/=gcd;  denominator/=gcd; 
+   if (numerator&lt;0 &amp;&amp; denominator&lt;0)//denominator cannot be <=0 
+   {   numerator=-numerator;  denominator=-denominator;  } 
+   else if (numerator&lt;0 || denominator&lt;0) 
+   {  numerator=-abs(numerator);  denominator=abs(denominator);  } 
+} 
+//*************************************************************** 
+// 构造函数 
+Rational::Rational(int int1, int int2)  
+{   numerator=int1;   denominator=int2;  simplify(); } 
+//*************************************************************** 
+// 重载的加法运算符 
+Rational Rational::operator+ ( const Rational&amp; op2 ) const 
+{   int n = numerator * op2.denominator + denominator * op2.numerator; 
+    int d = denominator * op2.denominator; 
+    return Rational(n,d); 
+} 
+//*************************************************************** 
+// 重载的减法运算符 
+Rational Rational::operator- ( const Rational&amp; op2 ) const 
+{   int n = numerator * op2.denominator - denominator * op2.numerator; 
+    int d = denominator * op2.denominator; 
+    return Rational(n,d); 
+} 
+//*************************************************************** 
+// 重载的乘法运算符 
+Rational Rational::operator* ( const Rational&amp; op2 ) const 
+{   int n = numerator * op2.numerator; 
+    int d = denominator * op2.denominator; 
+    return Rational(n,d); 
+} 
+//*************************************************************** 
+// 重载的除法运算符 
+Rational Rational::operator/ ( const Rational&amp; op2 ) const 
+{   if (op2.numerator) 
+    {  int n = numerator * op2.denominator; 
+       int d = denominator* op2.numerator; 
+       return Rational(n,d); 
+    }
+    else return *this;
+} 
+//*************************************************************** 
+// 重载的相等运算符 
+int Rational::operator==( const Rational&amp; c) const // 相等 
+{  return numerator==c.numerator &amp;denominator==c.denominator; } 
+//*************************************************************** 
+// 重载的不等运算符 
+int Rational::operator!=( const Rational&amp;c) const // 不相等 
+{    return !operator==(c);   } 
+//*************************************************************** 
+// 以a/b的形式显示对象 
+ostream&amp;operator<<(ostream&amp;output, Rational c) // 输出 
+{   return output << c.numerator << "/" << c.denominator;  } 
+//*************************************************************** 
+// 输入两个整型数组成一个有理数 
+istream&amp;operator>>(istream&amp; input, Rational&amp; c) // 输入 
+{   char ch;  
+    return input >> c.numerator >> ch >> c.denominator;  
+    c.simplify();
+    return input;
+}
+
+</pre>
+    </div>
+    </div>
+    <button class="top" id="topBtn">top</button>
+    <script type="text/javascript">
+    init();     
+    </script>
+  </body>
+</html>
