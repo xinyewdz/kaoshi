@@ -23,6 +23,9 @@ function init(){
   		$("#nextBtn").on("click",function(){
   			if(highItems){
   				currentItem++;
+          if(currentItem>=highItems.length){
+            currentItem = 0;
+          }
   				var item = items[highItems[currentItem]];
   				if(item){
   					var _top = $(item).offset().top-30;
