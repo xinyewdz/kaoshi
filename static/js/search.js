@@ -29,7 +29,7 @@ function init(){
   				var item = items[highItems[currentItem]];
   				if(item){
   					var _top = $(item).offset().top-30;
-  					$("body").animate({scrollTop:_top});
+  					$("html,body").animate({scrollTop:_top});
   				}
   			}
   		});
