@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  　<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>网络程序设计模拟试卷 </title>
+    <script type="text/javascript" src="../static/js/jquery-3.1.0.js"></script>
+  <script type="text/javascript" src="../static/js/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/search.css"/>
+  </head>
+  <body>
+    <div class="search"><input type="text" name="searchText" id="searchText"/><button id="searchBtn">搜索</button><button id="nextBtn">下一个</button></div>
+    <div id="contentGroup" class="contentGroup">
+      <div class="content">
+       模拟试卷A
+一．选择题（30分，每题3分，若注明多选，可选一个或多个选项）
+<pre class="item">1.  Java语言是由________________发明的。    D
+A. Microsoft公司      B. Borland公司    C. IBM公司      D. SUN公司
+</pre>
+<pre class="item">2.  设类While定义如下：
+  public class While {
+    public void loop() {
+      int i = 0;
+    while (1) {
+         System.out.println("i is"+i);
+      }
+    }
+  }
+以下哪些说法是正确的？   C
+A.类能成功通过编译。           B.因为行1的原因编译出错。
+C.因为行4的原因编译出错。          D.因为行5的原因编译出错。
+</pre>
+<pre class="item">3.  假设有一个二维数组a[10][y]，问以下哪个表达式能用来表示第二维的大小y？   C
+A.  a.length();   B.a.size(); C.a[0].length;    D.a.length[10]; E.a[].length;
+</pre>
+<pre class="item">4．  以下哪些接口的定义是合法的？（多选，2）    AD
+A.public interface A {int a();}         B.public interface B {int a() {}}
+C.private interface D {}            D.abstract interface E {}
+</pre>
+<pre class="item">5．哪一种布局管理器将容器分为东西南北中五个区域？ B
+    A. FlowLayout   B. BorderLayout     C. GridLayout   D. CardLayout
+  6.  Java中的所有例外对应的类均是以下哪个类的子类或子孙类？   B
+    A. Error      B. Exception      C. throw        D. RuntimeException
+</pre>
+<pre class="item">7. 当浏览器窗口被图标化后又重新恢复原大小时会调用Applet的什么方法？（多选，2）    BE
+A. init()     B. start()    C. stop()     D. destory()    E. paint() 
+</pre>
+<pre class="item">8. 下列哪个类允许你删除磁盘上的一个文件?    A
+A. File       B. FileInputStream  C. FileOutputStream     D. FileReader 
+</pre>
+<pre class="item">9. 以下哪个类中有一个名为accept()的方法？    B
+A.  Socket    B.  ServerSocket      C.  URL     D.  URLConnection 
+</pre>
+<pre class="item">10. 指出下列程序的所有错误？ （多选，2）   BC
+final class First {
+　private int a = 1;
+int b = 2; } 
+
+class Second extends First {
+public void method() {
+System.out.println(a + b);}
+}             
+A．println()参数应为字符串，因此此处不能调用该方法。 
+B．因为变量a 是private ,所以在其他类中不能访问a。 
+C．Second 不能继承First。 
+D．关键字final不能修饰类。
+</pre>
+二．填空题（20分，2分一格）
+<pre class="item">1．  _____ Java虚拟机或JVM ________是在物理机上用软件模拟出来的虚拟机，Java的可移植性就是通过它来实现的。
+</pre>
+<pre class="item">2．  多态性通常指相同的界面，但有不同的内部实现形式。Java通过_____方法重载_________和______方法重写（或覆盖）__________来实现多态性。 
+</pre>
+<pre class="item">3．  在Java中，关键字_____this_____表示当前对象，关键字___super______表示当前对象的父类。
+</pre>
+<pre class="item">4．  FileInputStream和FileReader均是Java系统包(Package)____java.io________中的类。
+</pre>
+<pre class="item">5．  Java的例外处理有两种方法，一是使用____throws_______语句将例外递交给上层调用机构去处理，二是使用_______try/catch/finally_______语句段自己来处理例外。
+</pre>
+<pre class="item">6．Java程序使用URL类来定位Internet上的资源。URL类在______java.net______包中，该类的______ openStream()_________方法能得到一个字节输入流，通过它程序员能够很方便地读入该URL的内容。
+</pre>
+三．分析题（共15分，第1题7分，第2题8分）
+
+<pre class="item">1．类Count定义如下：（7分）
+public class Count {
+  private int serialNumber;
+  private static int count = 0;
+  public Count() {
+    count++;
+    serialNumber = count;
+  }
+}
+问：
+（1）类Count中定义的两个成员变量，哪个是类变量？哪个是实例变量？方法Count()是什么方法？
+（2）实例变量和类变量主要有什么区别？
+（3）如果在另一个类中分别生成Count类的两个实例c1和c2：
+Count c1 = new Count();
+Count c2 = new Count();
+然后再在标准输出上输出c1.serialNumber和c2.serialNumber的值，分别是多少？
+
+（1）serialNumber为实例变量，count为类变量，方法count为构造方法（3分）
+（2）类变量只有一个存储空间，为所有类的实例所共享，而实例变量与实例相对应，有独立的存储空间。另外，类变量可通过类名和实例名来存取，而实例变量只能通过实例名来存取。（2分）
+（3）c1.serialNumber为1，c2.serialNumber为2。（2分）
+</pre>
+<pre class="item">2．假设类EOFException是类IOException的子类，而类IOException又是Exception的子类，请指出下列程序)执行时标准输出显示的内容。（8分）
+import java.io.*;
+class ExceptionTest {
+ public void trythis() {
+   try {
+    System.out.println("1");
+    throw new EOFException();
+   } catch (IOException e1) {
+    System.out.println("2");
+   } catch (Exception e2) {
+    System.out.println("3");
+   } finally {
+    System.out.println("4");
+   }
+   System.out.println("5");
+ }
+
+ public static void main(String[] args) {
+   ExceptionTest et = new ExceptionTest();
+   et.trythis();
+ }
+}
+
+程序打印的结果为：（8分）
+ 1
+ 2
+ 4
+ 5
+</pre>
+
+四．在包含Applet的HTML文本中可以使用若干个<param>标志将参数传给Applet。阅读下列Applet程序，给划线部分补上相应的代码，使得Applet能够接收HTML文本传来的参数并运行。并说出Applet的运行结果。 （10分）
+(假设HTML传送给Applet的有三个参数，参数student_name的值为学生姓名，参数score1的值为学生语文课的成绩，参数score2的值为学生数学课的成绩) 
+<pre class="item">1.
+import _____ java.applet.*_______①;
+import _____ java.awt.*_______②;
+public class printScore extends ____ Applet ____③ {
+  int score1, score2, avg_score;
+  String s_name;
+  public void init() {
+    s_name = _______ getParameter("student_name")___________④; //获得学生姓名
+    String s1 = _____ getParameter("score1")____________⑤; //获得语文课成绩
+    String s2 = ______ getParameter("score2")___________⑥; //获得数学课成绩
+    score1 = Integer.parseInt(s1);
+    score2 = Integer.parseInt(s2);
+    avg_score = (score1+score2)/2;
+   }
+   public void paint( __ Graphics _____⑦  g) {
+     String str= s_name+"的平均分为"+avg_score;
+     g.drawString(str, 5, 15);
+   }
+}
+
+</pre>
+<pre class="item">2．程序功能（3分）
+该Applet的功能是从HTML网页中接收学生姓名和和两门课的分数，在Applet的显示区域显示该学生的名字和平均分。
+</pre>
+<pre class="item">
+五．下列程序的目的是通过命令行参数给定一个文本文件，然后统计文本文件的字符数和行数并在标准输出上显示。请完成方法countChars()，使程序完整。（10分）
+import java.io.*;
+public class Count {
+
+    //method countChars
+//…………………….
+
+    public static void main(String[] args) throws Exception
+    {
+        if (args.length >= 1)
+            countChars(new FileReader(args[0]));
+        else
+            System.err.println("Usage: Count filename"); 
+    }
+}
+
+public static void countChars(FileReader in) 
+throws IOException  {
+    int charC = 0;
+  int lineC = 0;
+  String line;
+  BufferedReader bf = new BufferedReader(in);
+    while ((line=bf.readLine()) != null) {
+      charC += line.length(); 
+        lineC++;
+  }
+        System.out.println("Counted " + charC + " chars "+"and "+lineC+" lines.");
+}
+</pre>
+六．以下程序的功能是读入华东师范大学网站(www.ecnu.edu.cn)首页的内容(HTML形式的文本)并将其在本机的标准输出上显示。仔细阅读该程序，完成下列要求：（15分）
+<pre class="item">1．  完成划线部分中的XXX（共4处）。（8分）
+划线部分（8分）
+import java.net.*; -- (1)
+import java.io.*;; -- (2)
+openStream()   -- (3)
+readLine()     -- (4)
+</pre>
+<pre class="item">2．  修改上述程序，将从网站首页得到的HTML文本的内容保存到命令行参数给出的文件中。（7分）
+服务程序：
+import ¬¬¬¬ XXX ; ----(1)
+import ¬¬¬¬ XXX; ----(2)
+public class URLReader {
+    public static void main(String[] args) throws Exception {
+  URL ecnu = new URL("http://www.ecnu.edu.cn/");
+  BufferedReader in = new BufferedReader(
+        new InputStreamReader(
+        ecnu. ¬¬¬¬ XXX  ));   ----(3)
+  String inputLine;
+  while ((inputLine = in. ¬¬¬¬ XXX  ) != null)   ----(4)
+      System.out.println(inputLine);
+  in.close();
+    }
+}
+答案：
+import java.net.*;
+import java.io.*;
+public class URLReader {
+  public static void main(String[] args) throws Exception {
+  URL ecnu = new URL("http://www.ecnu.edu.cn/");
+if  (args.length != 1)
+    System.out.println("Argument Error!");
+    else {
+    BufferedReader in = new BufferedReader(
+        new InputStreamReader(
+        ecnu.openStream()));
+    PrintWriter out = new PrintWriter(new FileWriter(args[0]));
+    String inputLine;
+    while ((inputLine = in.readLine()) != null)
+        out.println(inputLine);
+    in.close();
+    out.close();
+  }
+  }
+}
+
+</pre>
+模拟试卷B
+一．选择题（30分，每题3分，若注明多选，可选一个或多个选项）
+<pre class="item">1．  Java字节码文件的后缀为___D_____。
+A. obj      B. exe      C. java   D. class
+</pre>
+<pre class="item">2．  Java Application中，以下哪个或哪些main()方法的声明是合法的？     B
+A. public static void main()          B. public static void main(String[] strs)
+C. public static void main(String args)     D. static public int main(String[] args)
+E. static void main(String[] args)        F. 均不正确
+</pre>
+<pre class="item">3．  关于Java的构造方法，下列说法中正确的有：    D
+（1） 通常构造方法由Java自动调用，不需由程序来显式地调用。
+（2） 构造方法一定与类同名。
+（3） 通过方法重载, 构造方法可以有不同的参数和类型。
+（4） 构造方法不必指出返回类型，其缺省的返回类型是对象类型本身。
+A.  1、3      B.  2        C.  2、3       D.  全部正确
+</pre>
+<pre class="item">4．  下列程序段执行后，在标准输出上显示的内容为：    C
+String b1 = new String(“Hello!”);
+String b2 = new String(“Hello!”);
+if  (b1 == b2)
+if  (b1.equals(b2))
+System.out.println(“a”);
+else
+System.out.println(“b”);
+else
+if  (b1.equals(b2))
+System.out.println(“c”);
+else
+System.out.println(“d”);
+A.  a         B.  b        C.  c       D.  d
+</pre>
+<pre class="item">5．  关于类变量和类方法，下列说法正确的有：   C
+（1） 在生成实例前类方法体内不能访问实例变量，也不能使用this关键字。
+（2） System.out即为一个类变量。
+（3） 在没有生成实例的情况下也能使用类方法。
+（4） 必须通过类名来存取该类中的类变量。
+A.  2对       B.  2、3对      C.  1、2和3对      D.  全对
+</pre>
+<pre class="item">6．  下列程序的输出应该是什么？   B
+public class MyProgram {
+  public static void main(String args[]) {
+        try {
+            System.out.println(“Hello world ”);
+            throw new Exception();
+        }
+        finally {
+            System.out.println(“Finally executing.”);
+        }
+  }
+}
+A.  程序能通过编译，但运行出错。
+B.  因为没有对应的catch语句，程序不能通过编译。
+C.  Hello world
+D.  Hello world（回车）Finally executing.
+</pre>
+<pre class="item">7．  下列哪个组件有一个addActionListener()方法，能响应事件ActionEvent？    C
+  A. java.awt.Frame       B. java.awt.Panel     C. java.awt.Button  D. java.awt.Label 
+</pre>
+<pre class="item">8．  有下述代码段：   B
+ import java.io.*;
+ public class ReadEmployee {
+  public static void main(String[] args) {
+    File employee = new File("test.txt");
+    FileInputStream in = new FileInputStream(employee);
+  }
+ }
+当编译和运行上述代码时会产生什么情况？
+A.  类能通过编译，但运行出错。
+B.  类不能通过编译。
+C.  类能正常运行，并生成名为test.txt的文件。
+D.  类能正常运行，但并不生成任何文件。
+E.  上述均不对。
+</pre>
+<pre class="item">9．  通常，套接字Socket中包含了以下哪些要素?（多选，2）   AB
+A.  主机IP地址      B.  端口号       C.  客户程序 
+D.  服务程序      E.  ServerSocket类和Socket类 
+</pre>
+<pre class="item">10． 有关类Demo，哪句描述是正确的？     A
+public class Demo extends Base{ 
+private int count; 
+public Demo(){ 
+System.out.println("A Demo object has been created"); 
+} 
+protected void addOne() {count++; } 
+}     
+A．当创建一个Demo类的实例对象时，count的值为0。 
+B．当创建一个Demo类的实例对象时，count的值是不确定的。 
+C．超类对象中可以包含改变count 值的方法。 
+D．Demo的子类对象可以访问count。
+</pre>
+二．是非题（20分，每题2分，正确写'T'，不正确写'F'）
+<pre class="item">1）Java使用的字符集为ASCII字符集。(   F  )
+</pre>
+<pre class="item">2）Java具有自动内存垃圾回收机制，程序员不必关心内存的释放。(  T   )
+</pre>
+<pre class="item">3）如果一个类中没有定义构造方法，则Java在生成这个类的实例时不会调用构造方法。( F )
+</pre>
+<pre class="item">4）类方法在生成类的实例前，不能存取实例变量。(  T  )
+</pre>
+<pre class="item">5）一个类可实现多个接口。类在实现接口时，必须实现接口描述的所有方法。(   T )
+</pre>
+<pre class="item">6）一个Java源文件中只能包含一个public class。(  T  )
+</pre>
+<pre class="item">7）Java中的File对象不仅可用来表示宿主机上的文件，也可以表示目录。(  T   )
+</pre>
+<pre class="item">8）所有例外类型必须得到处理，否则编译通不过。(  F  )
+</pre>
+<pre class="item">9）使用FileOutputStream的构造方法将磁盘文件构造为字节输出流时，要么这个文件原来不存在，如果该文件已存在，则必须是可覆盖的，否则会产生IOException的例外。(  T )
+</pre>
+<pre class="item">10）OuputStream的writeUTF()方法能将本地的数据格式转化为与平台无关的网络编码格式（UTF-8）后写入流。(    F  )
+</pre>
+三．阅读下列程序，并回答问题：（共15分，第一题7分，第二题8分）
+<pre class="item">
+程序段1：
+  import java.awt.*;
+  import java.awt.event.*;
+  class X extends Frame implements WindowListener {
+    public X() {
+      this.addWindowListener();
+      this.setSize(300,300);
+      this.setVisible(true);
+    }
+    public void windowClosing(WindowEvent e) {
+    System.out.println("Program ended.");
+   }
+   public static void main(String[] args) {
+     new X();
+   }
+}
+问：程序能否通过编译并运行？如能，说明程序的功能，如不能，说明原因并修改程序使之能够运行。
+程序不能通过编译，因为一个类如要实施某个接口，就要实现该接口中的所有方法，类X并未实现WindowListener的所有方法，所以编译出错。(3分)
+修改如下：（4分）
+import java.awt.*;
+import java.awt.event.*;
+class X extends Frame {
+  public X() {
+                this.addWindowListener(
+                new WindowAdapter() {
+         public void windowClosing(WindowEvent e) {
+           System.out.println("Program ended.");
+             System.exit(0);
+        }
+      });
+    this.setSize(300,300);
+      this.setVisible(true);
+  }
+  public static void main(String[] args) {
+    new X();
+  }
+}
+</pre>
+<pre class="item">
+程序段2:
+class Point {
+   int x,y;
+   Point(int x,int y) {
+       this.x=x;
+       this.y=y;
+   }
+   Point()  {
+       x=0;
+       y=0;
+   }
+}
+class PointCreate {
+    public static void main(String args[]) {
+        Point p1=new Point(10,20);
+        System.out.println(" p1: x=" +p1.x+ ",y=" +p1.y);
+       Point p2=new Point();
+        System.out.println("p2: x=" +p2.x+ ",y=" +p2.y);
+    }
+}
+问:
+</pre>
+<pre class="item">1．  Point class中两个同名的方法Point是什么方法？我们把这种用法称为什么?
+    构造方法，属方法的重载。（2分）
+</pre>
+<pre class="item">2．  程序的最终输出是什么？
+      p1:x=10,y=20
+      p2:x=0,y=0
+</pre>
+<pre class="item">3．  Point class中的this关键字代表什么? main()方法中的System.out是什么类型的变量?
+  this 代表当前对象，out为类变量
+
+</pre>
+<pre class="item">4．将下面的算法翻译成Java代码。（10分）
+第一步：声明一个名为miles初始值为100的double型变量。
+第二步：声明一个名为KILOMETERS_PER_MILE值为1.609的double型变量。
+第三步：声明一个名为kilometers的double型变量，将miles和KILOMETERS_PER_MILE相乘的结果赋值给kilometers。
+第四步：将kilometers显示在控制台上。
+在第四步之后，kilometers的值是多少？
+public class Test{
+     public static void main(String[] args){
+      double   miles=100;
+      double   KILOMETERS_PER_MILE=1.609;
+      double   kilometers=miles* KILOMETERS_PER_MILE;
+      System.out.println(kilometers);
+      }
+}   
+</pre>
+<pre class="item">5．下列类ReverseString的功能是从命令行接受一个字符串，将字符串的各字符颠倒后在标准输出上输出。如命令行输入为“abcd”，输出为“dcba” 。请写出类中缺少的reverseIt()方法。（10分）
+
+class ReverseString {
+    public static String reverseIt(String source) {
+        int len = source.length();
+        StringBuffer dest = new StringBuffer(len);
+        for (int i = len - 1; i >= 0; i--) {
+            dest.append(source.charAt(i));
+        }
+        return dest.toString();
+    }
+public static void main(String[] args)  {
+System.out.println("Result:"+reverseIt(args[0])); 
+  }
+}
+</pre>
+<pre class="item">6. 写一程序,读入命令行第一个参数指定的文本文件,将其所有字符转换为大写后写入第二个参数指定的文件中。（15分）
+import java.io.*;
+public class FileCopy  {
+public static void main(String args[])  throws IOException{
+if (args.length != 2) {
+System.out.println("Usage: FileCopy file1 file2");
+    return;
+}
+     BufferedReader sfl=new BufferedReader(new FileReader(args[0]));
+  PrintWriter dfl = new PrintWriter(new FileWriter(args[1]));
+String c;
+  while ((c=sfl.readLine()) != null) 
+      dfl.println(c.toUpperCase());
+    sfl.close();
+    dfl.close();
+    }
+}
+
+</pre>
+模拟试卷C 
+一．选择题（30分，每题3分，若注明多选，可选一个或多个选项）
+</pre>
+<pre class="item">1.  编译Applet源程序文件后，它所产生的字节码文件的扩展名为：   B
+  A. java   B. class    C. html   D. exe
+</pre>
+<pre class="item">2.  设a为布尔型变量，合法的赋值是_________。   D
+    A. a="true"     B. a=t      C. a=True     D. a=true
+</pre>
+<pre class="item">3.  下列类的定义中缺少对变量x的声明，使用哪些选项对应的声明语句能使类通过编译？（多选，2）      DE
+ public class Declare {
+  _______________
+ public static void main(String [] args) {
+   _______________
+    System.out.println("The variable is " + x);
+  }
+ }
+  A. "int x;" 插入行 2             B. "int x;" 插入行 4 
+  C. "int x = 5;" 插入行 2           D. "int x = 5;" 插入行 4 
+  E. "static int x;" 插入行 2          F. "int x = new int();" 插入行 4 
+</pre>
+<pre class="item">4.  运行下列程序的结果是什么（）        A
+public class Test {
+    static boolean foo(char c) {
+      System.out.print(c);
+      return true;}
+
+    public static void main( String[] argv ) {
+      int i =0;
+      for ( foo('A'); foo('B')&&(i<2); foo('C')){
+        i++ ;
+        foo('D');}
+}
+}
+A．ABDCBDCB                    　　B．ABCDABCD
+C．编译出错                           D．在运行时抛出异常
+</pre>
+<pre class="item">5.  将类的成员的访问权限设置为默认的，则该成员能被：    A
+A. 同一包中的类访问           B. 其他包中的类访问
+C. 所有的类访问             D. 所有类的子类访问
+</pre>
+<pre class="item">6.  对下列程序，以下哪种说法是正确的？     A
+class MyException throws NullPointerException {
+   public static void main(String[] args) {
+      String s = null;
+      System.out.println("String is " + s);
+}
+}
+A. 程序不能通过编译
+B. 程序能够运行，但会产生一个NullPointerException.
+C. 程序能正常运行并显示String is.
+D.以上都不正确
+</pre>
+<pre class="item">7.  对BorderLayout布局管理器来说，以下哪些是合法的位置区域？（多选，4）    ABDF
+A.  NORTH     B.SOUTH     C.TOP
+D.EAST        E.MIDDLE      F.CENTE
+</pre>
+<pre class="item">8.  Java对Applet的限制主要有：    C
+（1） Applet一般不能读写浏览器用户的文件系统。
+（2） Applet只能和保存该Applet的服务器通信。
+（3） Applet不能运行用户系统上的程序。
+（4） Applet 不可以利用浏览器提供的环境，如窗口等。
+   A. 1对       B. 1、2对      C. 1、2和3对       D. 全对
+</pre>
+<pre class="item">9.  System类的类变量out的类型为：   C
+  A. OutputStream   B. FileWriter     C. PrintStream      D. BufferedWriter
+</pre>
+<pre class="item">10. ServerSocket类调用accept()方法遇到输入输出错误时会产生以下哪种例外？    A
+  A. IOException              B. NullPointerException
+  C. ClassNotFoundException         D. SQLException
+</pre>
+二．填空题（20分，2分一格）
+<pre class="item">1．  Java的可移植性是通过_____ Java虚拟机或JVM ______实现的。它相当于一层软件屏蔽，屏蔽了底层硬件的不一致性。
+</pre>
+<pre class="item">2．  Java采用_____ unicode ______字符集, 该字符集的每个字符对应_____16_____位二进制。 
+</pre>
+<pre class="item">3．  在声明一个类变量时，前面必须加上_____ static _____修饰符。
+</pre>
+<pre class="item">4．  String和StringBuffer均是Java系统包(Package)______ java.lang ______中的类。
+</pre>
+<pre class="item">5．  _____ FlowLayout或顺序布局管理器_______布局管理器按顺序排列容器中的组件，并保持组件原有的大小。 
+</pre>
+<pre class="item">6．  Java中有两类流，一类流直接从某个指定的位置读或写，这类流称为结点流，而另一类流以其它流作为它的输入或输出，经过过滤或处理后再提供给用户，称为____过滤器流_______。 
+</pre>
+<pre class="item">7．  使用TCP/IP协议进行网络通信时，Socket可看成是一个包含____ IP地址______和_____端口号______的二元组。
+</pre>
+<pre class="item">8．  创建一个名为 MyPackage 的包的语句是      package MyPackage         。
+</pre>
+三．阅读下列程序，并回答问题：（10分）
+<pre class="item">1. SuperClass中的成员变量a是类变量还是实例变量？其中的SuperClass方法又是什么方法？
+  a为实例变量，SuperClass方法是构造方法
+  2．程序的输出是什么？
+  class SuperClass {
+  String a = "hello";
+  SuperClass() {
+    System.out.println(a);
+  }
+  }
+  public class SubClass extends SuperClass {
+  String a = "aaa";
+    public static void main(String args[]) {
+    SubClass bar = new SubClass();
+    System.out.println(bar.a);
+  }
+}
+
+  输出：（6分）
+hello
+aaa
+</pre>
+四．阅读下列程序，并回答问题：（15分）
+<pre class="item">1.  init(), start(), stop(), destory() 四个方法各在什么阶段被执行？
+init()：在Applet被第一次载入或重新载入时运行。
+start()：在Applet可见时运行。窗口从最小化恢复为原大小时也会运行。
+stop()：在Applet不可见时运行。如用户转向其他网页或窗口最小化时均会执行。
+destory()：在关闭浏览器，Applet消亡时被执行。
+</pre>
+<pre class="item">2.  如使用JDK自带的appletviewer来运行这个applet，运行后在applet面板上首先看到的内容是什么？此时标准输出上显示什么内容？将applet画面最小化后又恢复到原来的大小，applet面板上显示的内容又有什么变化？
+小应用程序各个阶段的输出：（7分）
+在Applet面板上显示init():1,start():1,
+在标准输出上显示（使用appletviewer对应所在的dos窗口）
+init():1
+start():1
+窗口最小化后又恢复为原来大小，applet面板上显示：
+init():1,start():1,stop():1,start():2,
+</pre>
+<pre class="item">3.  完成划线部分。
+import java.applet.Applet;
+import _______ import java.awt.*________
+public class LifeCycle _____ extends Applet _____ {
+int initCount = 0;
+int startCount = 0;
+int stopCount = 0;
+int destroyCount = 0;
+StringBuffer buffer = new StringBuffer();
+public void init() {
+++initCount;
+System.out.println("init():"+initCount);
+addItem("init():"+initCount+",");
+}
+public void start() {
+++startCount;
+System.out.println("start():"+startCount);
+addItem("start():"+startCount+",");
+}
+public void stop() {
+++stopCount;
+System.out.println("stop():"+stopCount);
+addItem("stop():"+stopCount+",");
+}
+public void destroy() {
+++destroyCount;
+System.out.println("destroy():"+destroyCount);
+addItem("destroy():"+destroyCount+",");
+}
+void addItem(String newWord) {
+buffer.append(newWord); 
+repaint();
+}
+public void paint(Graphics g) {
+g.drawRect(0, 0, getSize().width - 1, getSize().height - 1);
+g.drawString(buffer.toString(), 5, 15);
+}
+}
+</pre>
+五．
+<pre class="item">1.下列程序的目的是实现文本文件的拷贝。其中源文件名由第一个命令行参数给出，目的文件名由第二个命令行参数给出。请完成方法copyfiles()，使程序完整。（10分）
+
+import java.io.*;
+public class CopyFile {
+
+    //method copyfiles
+//………………….
+    public static void main(String[] args) throws Exception
+    {
+        if (args.length >= 1)
+            copyfiles(args[0],args[1]);
+        else
+            System.err.println("Usage: CopyFile  SouceFileName  DestFileName"); 
+    }
+}
+    public static void copyfiles(String sfl,String dfl) throws IOException {
+
+        FileReader in = new FileReader(sfl);
+        FileWriter out = new FileWriter(dfl);
+        int c;
+        while ((c = in.read()) != -1)
+           out.write(c);
+        in.close();
+        out.close();
+    }
+</pre>
+六．以下是一个使用Socket进行通信的服务程序，仔细阅读该程序，完成下列要求：（15分）
+<pre class="item">1．  将服务程序划线部分中的XXX用正确的名词替代（共4处），然后解释用标号指定的斜体字语句的功能（共3条），最后说出该服务程序完成的功能。（9分）
+</pre>
+<pre class="item">2．  编写一客户程序，能与服务程序通信并将服务程序发来的信息在标准输出上显示。（设客户程序与服务程序在同一主机上运行，主机名为localhost）（6分）
+服务程序：
+import ¬¬¬¬ java.net.* ;
+import java.io.*;
+public class SimpleServer {
+  public static void main(String args[]) {
+  ServerSocket s = null;
+  Socket s1;
+  String sendString = “Welcome to visit me!”;
+  OutputStream s1out;
+  DataOutputStream dos;
+  try  {
+s = new  ServerSocket (5432);  -----（1）
+  } catch (  IOException e) {}
+while (true) {
+      try {
+    s1 = s. accept ();  ------（2）
+    s1out = s1.getOutputStream();
+    dos = new DataOutputStream(s1out);
+    dos.writeUTF(sendString); -----（3）
+    s1out.close();
+    s1.close();
+      } catch (IOException e) {}
+}
+}
+}
+（2）（3分）语句1的功能为构造ServerSocket对象，使服务程序在指定的5432端口侦听。
+语句2的功能为调用accept()方法，该方法等待客户端来的连接请求然后返回一个新的Socket与之建立连接。
+语句3调用writeUTF()方法将要发送的字符串转换为与机器平台无关的UTF-8格式然后在网上传输。
+（3）（2分）程序功能：
+服务程序首先构造ServerSocket对象，并在指定的5432端口侦听，当有客户端的连接请求来时先建立连接，然后向客户方发送字符串“Welcome to visit me!”。
+</pre>
+<pre class="item">2) 参考程序（6分）
+import java.net.*;
+import java.io.*;
+public class SimpleClient {
+  public static void main(String args[]) throws IOException {
+  int c;
+  Socket s1;
+  InputStream s1In;
+  DataInputStream dis;
+  s1 = new Socket(localhost,5432);
+  s1In = s1.getInputStream();
+  dis = new DataInputStream(s1In);
+  String st = new String(dis.readUTF());
+  System.out.println(st);
+  s1In.close();
+  s1.close()
+  }
+}
+
+</pre>
+模拟试卷D
+一．  选择题（30分，每题3分，若注明多选，可选多个选项）
+</pre>
+<pre class="item">1.  JDK开发工具中Java的执行命令是： B
+    A. javac        B. java       C. cmd        D. c:\j2sdk\bin
+</pre>
+<pre class="item">2.  Unicode编码采用_____D______位二进制来表示一个字符。
+    A. 8        B. 32       C. 64       D. 16
+</pre>
+<pre class="item">3.  有关类的说法正确的是：     B
+A.  类具有封装性，所以类的数据是不能被访问的
+B.  类具有封装性，但可以通过类的公共接口访问类中的数据
+C.  申明一个类时，必须用public修饰符
+D.  每个类中，必须定义一个main方法，否则程序无法通过编译
+</pre>
+<pre class="item">4.  关于Java中的继承，以下哪种说法是正确的？    D
+A. 父类的对象就是子类的对象     B. 一个类可以有几个父类
+C. 一个类只能有一个子类       D. 一个类只能有一个父类
+</pre>
+<pre class="item">5.  类TestServer定义如下：    D
+  class TestServer {
+    public TestServer() {
+      int users = 1;
+    }
+    public void increment() {
+      users = users + 1;
+    }
+    public static void main(String[] args) {
+      TestServer ts = new TestServer();
+    ts.increment();
+     System.out.println(“Variable users = “+ts.users);  
+   }
+ }
+</pre>
+<pre class="item">6.该类的输出将是什么？
+A . Variable users = 1.               B. Variable users = 2.
+C. 类能够通过编译，但运行出错。         D. 类编译出错
+</pre>
+<pre class="item">7.  类Child定义如下。为使类Child能顺利通过编译，其父类Parent中必须包含哪些构造方法？（多选，2）    BC
+public class Child extends Parent{
+  int a, b, c;
+    public Child(int x, int y) {
+    a = x; b = y;
+  }
+  public Child(int x) {
+    super(x);
+  }
+ }
+  A. public Parent(int m, int n)          B. public Parent(int m) 
+  C. public Parent()                D. public Parent(int m, int n, int o) 
+</pre>
+<pre class="item">8.  Java中采用以下哪个关键字将例外递交给上一层调用机构？    A
+    A. throws       B. Throw        C. catch        D. throw
+</pre>
+<pre class="item">9.  以下哪个布局管理器是Frame缺省的布局管理器？    B
+A．FlowLayout    B．BorderLayout    C．GridLayout    D．CardLayout
+</pre>
+<pre class="item">10.  以下哪个类不是Applet类的父类或祖先类？      D
+A. java.awt.Component   B. java.awt.Container   C. java.awt.Panel   D. java.awt.Window 
+</pre>
+<pre class="item">11.  以下哪个类提供了能从文件中按字符方式读取数据的方法？    C
+  A. FileInputStream    B. BufferedInputStream    C. FileReader   D. FilterReader
+</pre>
+二．填空题（20分，2分一格）
+<pre class="item">1．  main方法的声明修饰符是______ public static void _______。
+</pre>
+<pre class="item">2．  用_____ private ____关键字修饰的变量称为私用变量，只允许当前类中的代码访问它，以实现数据隐藏。
+</pre>
+<pre class="item">3．  一个类中使用多个同名的方法，但这些方法的参数均不相同，调用时根据实在参数的情况来选择要调用的方法，这称为方法的_____重载_____。 
+</pre>
+<pre class="item">4．  Java中的所有的例外类均是______ Exception ________类的子类或子孙类。该类的子类中有一类称为_____ RuntimeException _______的例外类型，程序员可以处理也可以不处理，除此之外其他类型的例外程序员必须处理，否则编译会报错。
+</pre>
+<pre class="item">5．  Applet的主要方法包括_____ init()、start()、 stop()、destroy()_____和paint()。
+</pre>
+<pre class="item">6．  网络编程用到的Socket和ServerSocket类包含在______ java.net ______包中。
+</pre>
+三．分析题（15分）
+<pre class="item">1. 有以下程序段：（9分）
+  import java.awt.*;
+  import java.awt.event.*;
+  class X extends Frame implements MouseListener {
+    public X() {
+      this.addMouseListener(this);
+      this.setSize(300,300);
+      this.setVisible(true);
+    }
+    public void mouseClicked(MouseEvent e) {
+       System.out.println("Mouse Clicked!");
+  }
+   public static void main(String[] args) {
+     new X();
+   }
+}
+问：程序能否通过编译并运行？如能，说明程序的功能，如不能，说明原因并修改程序使之能够运行。
+程序不能通过编译，因为一个类如要实施某个接口，就要实现该接口中的所有方法，类X并未实现MouseListener的所有方法，所以编译出错。(3分)
+修改如下：（6分）
+import java.awt.*;
+import java.awt.event.*;
+class X extends Frame {
+  public X() {
+  this.addMouseListener(
+    new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        System.out.println("Mouse Clicked!");
+      }
+    });
+  this.setSize(300,300);
+  this.setVisible(true);
+  }
+public static void main(String[] args) {
+   new X();
+ }
+}
+
+</pre>
+<pre class="item">2．若tryThis()方法抛出NullPointerException例外，则下面一段代码产生的输出是什么？（6分）
+try{
+  System.out.println("before Exception");
+tryThis();
+  return;
+} catch(IOException x1) {
+  System.out.println("exception1");
+} catch(Exception x2) {
+  System.out.println("exception2');
+} finally {
+  System.out.println("finally");
+}
+
+程序输出：（6分）
+before Exception
+exception2
+finally
+
+</pre>
+四．
+<pre class="item">1.下面程序实现对自然数1到10的求和计算，编译时程序出错，请说出错原因并改正。（10分）
+public class Add_Sum {
+  public static void main(String args[]) {
+  int sum = 0;
+  for (int i=1;i<=10;i++)
+    sum = sum+i;
+  System.out.println("i="+i+",sum="+sum);
+}
+}
+变量i定义在for循环中，其作用域仅限于for循环，因此在用System.out.println语句输出时会报错。（3分）
+修改如下：（7分）
+public class Add_Sum {
+  public static void main(String args[]) {
+  int sum = 0;
+  int i = 0;
+  for (i=1;i<=10;i++)
+    sum = sum+i;
+  System.out.println("i="+i+",sum="+sum);
+}
+}
+</pre>
+五．仔细阅读下列程序，完成以下要求：（10分）
+<pre class="item">1．  完成划线部分中的XXX（共4处），使程序完整。（8分）
+</pre>
+<pre class="item">2．  说出下列程序的功能。（2分）
+服务程序：
+import ¬¬¬¬ java.net.*; ----(1)
+import ¬¬¬¬ java.io.*; ----(2)
+public class URLReader {
+    public static void main(String[] args) throws Exception {
+  URL ecnu = new URL("http://www.ecnu.edu.cn/"); //该URL对应华东师范大学网站首页
+  BufferedReader in = new BufferedReader(
+        new InputStreamReader(
+        ecnu. ¬¬¬¬ openStream()));   ----(3)
+  String inputLine;
+  while ((inputLine = in. ¬¬¬¬ readLine()) != null)   ----(4)
+      System.out.println(inputLine);
+  in.close();
+    }
+}
+程序读入华东师范大学网站首页的内容（HTML形式），并在标准输出上显示。
+</pre>
+六．编程，
+<pre class="item">1.从键盘上读入一行，并将其中的小写字符转换为大写字符后在屏幕上回显。上述操作循环执行，直至输入空行，程序结束。（15分）
+import java.io.*;
+public class Echo {
+  public static void main(String[] args) {
+    BufferedReader in =
+      new BufferedReader(
+        new InputStreamReader(System.in));
+    String s;
+    try {
+      while((s = in.readLine()).length() != 0)
+        System.out.println(s.toUpperCase());
+    } catch(IOException e) {
+      e.printStackTrace();
+    }
+  }
+} 
+
+</pre>
+    </div>
+    </div>
+    <button class="top" id="topBtn">top</button>
+    <script type="text/javascript">
+    init();     
+    </script>
+  </body>
+</html>
